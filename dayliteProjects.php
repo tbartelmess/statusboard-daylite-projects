@@ -126,7 +126,7 @@ function table(){
   		  foreach ($columns as $name => $type) {
 
     		  //default values
-  		    $content = $data[$name];
+    		  (!empty($data[$name])) ? $content = $data[$name] : $content = '';
   		    $width = $type[0];
   		    $color = $type[1];
 
@@ -151,7 +151,7 @@ function table(){
               }
               break;
             case 'dueDate':
-              if( $due = get_date_content($data[$name]) ) {
+              if( !empty($data[$name]) && $due = get_date_content($data[$name]) ) {
                 $content = $due[0];
                 if( !empty($due[1]) ) { $color = $due[1]; }
               }
@@ -198,7 +198,7 @@ function get_date_content($date) {
     $curr = new DateTime();
     $diff = $due->diff($curr);
 
-
+    $to = '';
     $years = $diff->format('%y');
     $months = $diff->format('%m');
     $days = $diff->format('%d');

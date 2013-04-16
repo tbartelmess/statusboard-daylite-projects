@@ -20,6 +20,7 @@ Daylite Projects on Status Board by Panic
 2. Edit dayliteProjects.php
 3. Edit dayliteProjects.scpt file 
 4. Load and start LaunchAgent for automatic updates
+5. Add table widget to Status Board app
 
 
 ### 1. Upload files
@@ -54,6 +55,9 @@ Move `com.webentity.sbdayliteprojects.plist` to `~/Library/LaunchAgents/`. Then 
 	launchctl load ~/Library/LaunchAgents/com.webentity.sbdayliteprojects.plist
 	launchctl start com.webentity.sbdayliteprojects
 
+### 5. Add table widget to Status Board app
+Add a new table widget in Status Board with URL to your `dayliteProjects.php` on web hosting.
+
 ## Security
 Add `.htaccess` and `.htpasswd` to same folder, where you have `dayliteProjects.php`
 
@@ -78,7 +82,7 @@ Add this two line before `req buildRequestHeaders.` in `dayliteProjects.scpt`
 
 ## Thanks to
 
-- Daylite and AJ from Daylite forum
+- Marketcircle Inc. and AJ from Daylite forum
 - Panic Inc.
 
 ## Support
