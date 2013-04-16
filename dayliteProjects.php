@@ -237,6 +237,9 @@ function get_date_content($date) {
 
 //helper function to sort by priority
 function priority_sort($a, $b) {
+  if(empty($a['priority'])) { $a['priority'] = 0; }
+  if(empty($b['priority'])) { $b['priority'] = 0; }
+
   return ($b['priority'] > $a['priority']);
 }
 
