@@ -86,17 +86,17 @@ function table(){
   global $nicknames;
 
 	//load data from file
-	$data = json_decode( file_get_contents("dayliteProjects.json"), true );
+	$projects = json_decode( file_get_contents("dayliteProjects.json"), true );
 
 	// order data by priority
 	if(ORDER_BY_PRIORITY) {
-  	if(!empty($data)) {
-  	  usort($data, 'priority_sort');
+  	if(!empty($projects)) {
+  	  usort($projects, 'priority_sort');
     }
 	}
 
 	/*echo '<pre>';
-	var_dump($data);
+	var_dump($projects);
   echo '</pre>';*/
 
 	?>
@@ -104,10 +104,10 @@ function table(){
 		<?php
 
 		// test if data exist
-		if( !empty($data) ) {
+		if( !empty($projects) ) {
 
   		//list all projects
-  		foreach( $data as $project => $data ) {
+  		foreach( $projects as $project => $data ) {
 
     		//filter by category
     		if(FILTER_BY_CATEGORY && !in_array($data['category'], $categories)) {
