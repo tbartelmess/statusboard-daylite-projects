@@ -41,8 +41,8 @@ $owners = array(
   'owner2'
 );
 
-// owner filter - show project with these clients
-define('FILTER_BY_CLIENT', false); //set to true if you whant to filter by owner
+// client filter - show project with these clients
+define('FILTER_BY_CLIENT', false); //set to true if you whant to filter by client
 $clients = array(
   'client1',
   'client2'
