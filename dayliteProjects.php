@@ -215,9 +215,12 @@ function get_date_content($date) {
         $color = $redColor;
       }
 
+    } else {
+      $to = 'today';
+      $color = $redColor;
     }
 
-    if(!$diff->invert) {
+    if(!$diff->invert && $days > 0) {
       $to .= ' ago';
     }
 
