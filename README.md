@@ -29,10 +29,11 @@ Upload to your webhosting `dayliteProjects.json` (with example data) and `daylit
 ### 2. Edit dayliteProjects.php
 In `dayliteProjects.php` you can:
 
-- Show/hide and change order of columns - priority, project name, stage, due date, category and owner. 
+- Show/hide and change order of columns - priority, project name, stage, due date, category, owner, client and company. 
 - Set width and text color for columns.
 - Setup filter by categories.
 - Setup filter by owners.
+- Setup filter by clients.
 - Set to order projects by priorty.
 - Setup date format (!).
 - Show for example "2 day(s)" instead of full date for due date (need correct date format).

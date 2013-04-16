@@ -22,7 +22,9 @@ $columns = array(
   //'owner' => array('',''),
   //'currentStage' => array('',''),
   //'totalStages' => array('',''),
-  'percentDoneString' => array('','')
+  'percentDoneString' => array('',''),
+  //'client' => array('',''),
+  //'company' => array('','')
 );
 
 // category filter - what categories to show
@@ -37,6 +39,13 @@ define('FILTER_BY_OWNER', false); //set to true if you whant to filter by owner
 $owners = array(
   'owner1',
   'owner2'
+);
+
+// owner filter - show project with these clients
+define('FILTER_BY_CLIENT', false); //set to true if you whant to filter by owner
+$clients = array(
+  'client1',
+  'client2'
 );
 
 // order by priority - default is by due date
@@ -83,6 +92,7 @@ function table(){
   global $columns;
   global $categories;
   global $owners;
+  global $clients;
   global $nicknames;
 
 	//load data from file
@@ -116,6 +126,11 @@ function table(){
 
     		//filter by owner
     		if(FILTER_BY_OWNER && !in_array($data['owner'], $owners)) {
+      		continue;
+    		}
+
+    		//filter by client
+    		if(FILTER_BY_CLIENT && !in_array($data['client'], $clients)) {
       		continue;
     		}
 
