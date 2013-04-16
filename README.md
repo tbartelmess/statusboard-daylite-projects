@@ -3,7 +3,9 @@ Daylite Projects on Status Board by Panic
 
 ![Daylite Projects on Status Board - Example 1](http://files.web-entity.cz/daylite-statusboard-example1.jpg)
 
-![Daylite Projects on Status Board - Example 2](http://files.web-entity.cz/daylite-statusboard-example2.jpg)
+![Daylite Projects on Status Board - Example 2](http://files.web-entity.cz/daylite-statusboard-example3.png)
+
+![Daylite Projects on Status Board - Example 3](http://files.web-entity.cz/daylite-statusboard-example2.jpg)
 
 ## Requirements
 -----
@@ -33,6 +35,7 @@ In `dayliteProjects.php` you can:
 - Set to order projects by priorty.
 - Setup date format (!).
 - Show for example "2 day(s)" instead of full date for due date (need correct date format).
+- Possibility to show project bars.
 - And setup nicknames for project owners :-)
 
 ### 3. Edit dayliteProjects.scpt

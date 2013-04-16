@@ -19,7 +19,10 @@ $columns = array(
   'stage' => array('0','rgb(0, 159, 153)'),
   'dueDate' => array('','rgb(0, 108, 230)'),
   //'category' => array('',''),
-  //'owner' => array('','')
+  //'owner' => array('',''),
+  //'currentStage' => array('',''),
+  //'totalStages' => array('',''),
+  'percentDoneString' => array('','')
 );
 
 // category filter - what categories to show
@@ -49,6 +52,8 @@ $nicknames = array(
   'Mary Jennings' => 'Mary'
 );
 
+// show percent done in bars - you need to show percentDoneString in columns
+define('SHOW_BARS', true); //set to true if you whant to use it
 
 //Date format for dueDate - must be same as Daylites ouput - see http://php.net/manual/en/function.date.php
 $dateFormat = "j. n. Y";
@@ -130,6 +135,19 @@ function table(){
             case 'owner':
               if(USE_NICKNAMES && array_key_exists($content, $nicknames)) {
                 $content = $nicknames[$content];
+              }
+              break;
+            case 'percentDoneString':
+              $content = round($content).'%';
+              if(SHOW_BARS) {
+                $name = "projectsBars";
+                $percent = round($content);
+                $content = "";
+
+                for( $i = 1, $b = calc_bars($percent); $i <= $b; $i++ ) {
+                  $content .= '<div class="barSegment value'.$i.'"></div>';
+                }
+
               }
               break;
             case 'dueDate':
@@ -217,6 +235,12 @@ function get_date_content($date) {
 //helper function to sort by priority
 function priority_sort($a, $b) {
   return ($b['priority'] > $a['priority']);
+}
+
+//helper function to get bars
+function calc_bars($percent){
+	$value = (int) str_replace('%', '', $percent) / 10;
+	return round( ($value > 8 ? 8 : $value) * .8 );
 }
 
 ?>
