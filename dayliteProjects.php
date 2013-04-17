@@ -87,21 +87,21 @@ $nicknames = array(
   'Mary Jennings' => 'Mary'
 );
 
-//client nicknames (you can use images, for example <img src="chuck.jpg" />
+//client nicknames
 define('USE_CLIENT_NICKNAMES', false); //set to true if you whant to use it
 define('USE_CLIENT_IMG', false); //set to true, if you like to use images instead of text. USE_CLIENT_NICKNAMES must be true. Add only path to image with image name (for example /images/mary.jpg).
 $clientnicknames = array(
   'Chuck Darwin' => 'Chuck'
 );
 
-//category nicknames (you can use images, for example <img src="marketing.jpg" />
+//category nicknames
 define('USE_CAT_NICKNAMES', false); //set to true if you whant to use it
 define('USE_CAT_IMG', false); //set to true, if you like to use images instead of text. USE_CAT_NICKNAMES must be true. Add only path to image with image name (for example /images/mary.jpg).
 $catnicknames = array(
   'Marketing' => '[M]'
 );
 
-//company nicknames (you can use images, for example <img src="darvin.jpg" />
+//company nicknames
 define('USE_COM_NICKNAMES', false); //set to true if you whant to use it
 define('USE_COM_IMG', false); //set to true, if you like to use images instead of text. USE_COM_NICKNAMES must be true. Add only path to image with image name (for example /images/mary.jpg).
 $comnicknames = array(
