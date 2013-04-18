@@ -80,6 +80,9 @@ define('ORDER_BY_PRIORITY', false); //set to true if you whant to use it
 $redDays = 7;
 $redColor = "red"; //css color
 
+//load font awesome font icons - more at http://fortawesome.github.io/Font-Awesome/ - you can use it for nicknames (for example '<i class="icon-envelope-alt"></i>')
+define('LOAD_AWESOME', false);
+
 //owners nicknames
 define('USE_OWNER_NICKNAMES', false); //set to true if you whant to use it
 define('USE_OWNER_IMG', false); //set to true, if you like to use images instead of text. USE_OWNER_NICKNAMES must be true. Add only path to image with image name (for example /images/mary.jpg).
@@ -162,6 +165,12 @@ function table(){
 	/*echo '<pre>';
 	var_dump($projects);
   echo '</pre>';*/
+
+
+  //load font awesome css font-face
+  if(LOAD_AWESOME) {
+    echo '<link href="//netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet">';
+  }
 
 	?>
 	<table id="projects">
