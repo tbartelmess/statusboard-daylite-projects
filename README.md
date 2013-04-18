@@ -34,11 +34,12 @@ In `dayliteProjects.php` you can:
 - Setup filter by categories, owner, clients.
 - Exclude specific categories, owners, clients.
 - Set to order projects by priorty.
+- Add header row.
 - Setup date format (!).
 - Show for example "2 day(s)" instead of full date for due date (need correct date format).
 - Possibility to show project bars.
 - Nicknames for project owners, categories, clients and companies :-) 
-- Or you can use images insetad of text nicknames :-)
+- Or you can use images or Font Awesome icons insetad of text nicknames :-)
 
 ### 3. Edit dayliteProjects.scpt
 
