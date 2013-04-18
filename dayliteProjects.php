@@ -11,20 +11,20 @@
  * Config
 */
 
-// table columns 'name' => array( 'column width', 'color (css)', 'text align (center|left|right)')
+// table columns 'name' => array( 'column width', 'color (css)', 'text align (center|left|right)', 'Headline')
 // comment or comment out for show/hide column
 $columns = array(
-  //'priority' => array('30','rgb(174, 183, 188)', ''),
-  'projectName' => array('','rgb(252, 107, 0)', ''),
-  'stage' => array('','rgb(0, 159, 153)', ''),
-  'dueDate' => array('','rgb(0, 108, 230)', ''),
-  //'category' => array('','', ''),
-  //'owner' => array('','', ''),
-  //'currentStage' => array('','', ''),
-  //'totalStages' => array('','', ''),
-  'percentDoneString' => array('','', ''),
-  //'client' => array('','', ''),
-  //'company' => array('','', '')
+  //'priority' => array('30','rgb(174, 183, 188)', '', 'Priority'),
+  'projectName' => array('','rgb(252, 107, 0)', '', 'Project'),
+  'stage' => array('','rgb(0, 159, 153)', '', 'Stage'),
+  'dueDate' => array('','rgb(0, 108, 230)', '', 'Due'),
+  //'category' => array('','', '', 'Category'),
+  //'owner' => array('','', '', 'Owner'),
+  //'currentStage' => array('','', '', ''),
+  //'totalStages' => array('','', '', ''),
+  'percentDoneString' => array('','', '', 'Status'),
+  //'client' => array('','', '', 'Client'),
+  //'company' => array('','', '', 'Company')
 );
 
 //set width unit - px or %
@@ -111,6 +111,9 @@ $comnicknames = array(
   'Darwin Studios' => '(D)'
 );
 
+//show first row with headlines
+define('SHOW_HEADLINE', false);
+
 // show percent done in bars - you need to show percentDoneString in columns
 define('SHOW_BARS', true); //set to true if you whant to use it
 
@@ -175,6 +178,17 @@ function table(){
 	?>
 	<table id="projects">
 		<?php
+
+  	if(SHOW_HEADLINE) {
+      echo '<tr style="background: none;">';
+
+      foreach ($columns as $name => $conf) {
+        printf('<td class="%s" style="font-style: italic; background: none; text-transform: none;">%s</td>',$name , $conf[3]);
+      }
+
+      echo '</tr>';
+    }
+
 
 		// test if data exist
 		if( !empty($projects) ) {
