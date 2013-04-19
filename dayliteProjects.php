@@ -183,10 +183,17 @@ function table(){
       echo '<tr style="background: none;">';
 
       foreach ($columns as $name => $conf) {
+        $width = $conf[0];
+
         if(SHOW_BARS && $name == "percentDoneString") {
           $name = "projectsBars";
         }
-        printf('<td class="%s" style="font-style: italic; background: none; text-transform: none;">%s</td>',$name , $conf[3]);
+
+        if(!empty($width)) {
+          $width = 'width: '.$conf[0].$widthUnit.';';
+        }
+
+        printf('<td class="%s" style="font-style: italic; background: none; text-transform: none; %s">%s</td>',$name , $width, $conf[3]);
       }
 
       echo '</tr>';
