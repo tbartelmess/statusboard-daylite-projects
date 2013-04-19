@@ -113,6 +113,7 @@ $comnicknames = array(
 
 //show first row with headlines
 define('SHOW_HEADLINE', false);
+$headColor = ''; //headline text color
 
 // show percent done in bars - you need to show percentDoneString in columns
 define('SHOW_BARS', true); //set to true if you whant to use it
@@ -154,6 +155,7 @@ function table(){
   global $catnicknames;
   global $comnicknames;
   global $widthUnit;
+  global $headColor;
 
 	//load data from file
 	$projects = json_decode( file_get_contents("dayliteProjects.json"), true );
@@ -182,6 +184,12 @@ function table(){
   	if(SHOW_HEADLINE) {
       echo '<tr style="background: none;">';
 
+      if(!empty($headColor)) {
+        $hcolor = 'color: '.$headColor.';';
+      } else {
+        $hcolor = '';
+      }
+
       foreach ($columns as $name => $conf) {
         $width = $conf[0];
 
@@ -193,7 +201,7 @@ function table(){
           $width = 'width: '.$conf[0].$widthUnit.';';
         }
 
-        printf('<td class="%s" style="font-style: italic; background: none; text-transform: none; %s">%s</td>',$name , $width, $conf[3]);
+        printf('<td class="%s" style="font-style: italic; background: none; text-transform: none; %s %s">%s</td>',$name , $width, $hcolor, $conf[3]);
       }
 
       echo '</tr>';
