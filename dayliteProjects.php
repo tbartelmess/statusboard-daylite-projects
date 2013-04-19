@@ -183,6 +183,9 @@ function table(){
       echo '<tr style="background: none;">';
 
       foreach ($columns as $name => $conf) {
+        if(SHOW_BARS && $name == "percentDoneString") {
+          $name = "projectsBars";
+        }
         printf('<td class="%s" style="font-style: italic; background: none; text-transform: none;">%s</td>',$name , $conf[3]);
       }
 
